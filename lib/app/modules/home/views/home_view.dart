@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travel_transportation/app/constant/constant.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
+import '../search/search_category/views/search_category_view.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView({super.key});
@@ -59,13 +61,32 @@ class _slideDiscount extends StatelessWidget {
       child: Column(
         crossAxisAlignment: .start,
         children: [
-          Text(
-            'Special Discount',
-            style: TextStyle(
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+          Row(
+            mainAxisAlignment: .spaceBetween,
+            children: [
+              Text(
+                'Special Discount',
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(Routes.DISCOUNT);
+                },
+                child: Text(
+                  'View All',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+
+                    fontSize: 14,
+                    color: btnColorNormal,
+                  ),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 10),
           CarouselSlider(
@@ -203,101 +224,69 @@ class _searchTicket extends StatelessWidget {
                 const Divider(height: 1, color: lineColor),
 
                 // Bus
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 15,
-                    left: 15,
-                    top: 15,
-                    bottom: 15,
-                  ),
-                  child: Row(
-                    children: [
-                      Image.asset('assets/icons/bus.png'),
-                      const SizedBox(width: 10),
-                      Text(
-                        'From',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: greyColor,
-                        ),
-                      ),
-                    ],
+                ListTile(
+                  onTap: () {
+                    Get.to(() => SearchCategoryView());
+                  },
+                  leading: Image.asset('assets/icons/bus.png'),
+                  title: Text(
+                    'From',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: greyColor,
+                    ),
                   ),
                 ),
                 const Divider(height: 1, color: lineColor),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 15,
-                    left: 15,
-                    top: 15,
-                    bottom: 15,
-                  ),
-                  child: Row(
-                    children: [
-                      Image.asset('assets/icons/bus.png'),
-                      const SizedBox(width: 10),
-                      Text(
-                        'To',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: greyColor,
-                        ),
-                      ),
-                    ],
+                ListTile(
+                  onTap: () {
+                    Get.to(() => SearchCategoryView());
+                  },
+                  leading: Image.asset('assets/icons/bus.png'),
+                  title: Text(
+                    'To',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: greyColor,
+                    ),
                   ),
                 ),
                 const Divider(height: 1, color: lineColor),
 
                 // Date travel & Return
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 15,
-                    left: 15,
-                    top: 15,
-                    bottom: 15,
-                  ),
-                  child: Row(
-                    children: [
-                      Image.asset('assets/icons/date.png'),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Date of travel',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: greyColor,
-                        ),
-                      ),
-                    ],
+                ListTile(
+                  onTap: () {
+                    Get.to(() => SearchCategoryView());
+                  },
+                  leading: Image.asset('assets/icons/date.png'),
+                  title: Text(
+                    'Date of travel',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: greyColor,
+                    ),
                   ),
                 ),
                 const Divider(height: 1, color: lineColor),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 15,
-                    left: 15,
-                    top: 15,
-                    bottom: 15,
-                  ),
-                  child: Row(
-                    children: [
-                      Image.asset('assets/icons/date.png'),
-                      const SizedBox(width: 10),
-                      Text(
-                        'Date of return (Optional)',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: greyColor,
-                        ),
-                      ),
-                    ],
+                ListTile(
+                  onTap: () {
+                    Get.to(() => SearchCategoryView());
+                  },
+                  leading: Image.asset('assets/icons/date.png'),
+                  title: Text(
+                    'Date of return (Optional)',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: greyColor,
+                    ),
                   ),
                 ),
                 const Divider(height: 1, color: lineColor),
@@ -312,7 +301,9 @@ class _searchTicket extends StatelessWidget {
                       color: btnColorNormal,
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.SEARCH);
+                      },
                       child: Text(
                         'Search',
                         style: TextStyle(
@@ -328,7 +319,7 @@ class _searchTicket extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 120,
+            top: 112,
             right: 15,
             child: Container(
               width: 44,
@@ -391,14 +382,22 @@ class _header extends StatelessWidget {
             ),
           ],
         ),
-        Container(
-          height: 44,
-          width: 44,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: Colors.white,
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(Routes.NOTIFICATION);
+          },
+          child: Container(
+            height: 44,
+            width: 44,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.white,
+            ),
+            child: Image.asset(
+              'assets/icons/notification.png',
+              color: greyColor,
+            ),
           ),
-          child: Image.asset('assets/icons/notification.png', color: greyColor),
         ),
       ],
     );

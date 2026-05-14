@@ -12,6 +12,16 @@ class HistoryView extends GetView<HistoryController> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
         child: AppBar(
+          iconTheme: IconThemeData(color: Colors.white),
+          title: Text(
+            'History Booking',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+
           toolbarHeight: 80,
           flexibleSpace: Container(
             decoration: const BoxDecoration(
@@ -21,36 +31,25 @@ class HistoryView extends GetView<HistoryController> {
                 colors: [gradientTopColor, gradientBottom2Color],
               ),
             ),
-            child: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'History Booking',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Image.asset(
-                        'assets/icons/option.png',
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Text(
+                'Select All',
+                style: TextStyle(fontSize: 14, color: Colors.white),
               ),
             ),
-          ),
+          ],
         ),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.only(right: 16, left: 16, top: 20),
+        padding: const EdgeInsets.only(
+          right: 16,
+          left: 16,
+          top: 20,
+          bottom: 100,
+        ),
         itemCount: booking.length,
         itemBuilder: (context, index) {
           final book = booking[index];

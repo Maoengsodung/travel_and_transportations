@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.7.3
   carousel_slider: ^5.1.2
+  flutter_rating_stars: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +79,25 @@ flutter:
     - assets/icons/option.png
     - assets/icons/back.png
     - assets/icons/next.png
+    - assets/icons/back-outline.png
+    - assets/icons/search.png
+    - assets/icons/bookmark.png
+    - assets/icons/logout.png
+    - assets/icons/user_setting.png
+    - assets/icons/key.png
+    - assets/icons/noti_setting.png
+    - assets/icons/payment.png
+    - assets/icons/language.png
+    - assets/icons/help.png
+    - assets/icons/about.png
+    - assets/icons/history_setting.png
+    - assets/icons/success.png
+    - assets/icons/cash.png
+    - assets/icons/date-time.png
+    - assets/icons/promotion-outline.png
+    - assets/icons/save.png
+    - assets/icons/circum_route.png
+    - assets/icons/camera.png
 
     ## Discount
     - assets/discounts/dis1.png

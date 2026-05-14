@@ -32,7 +32,7 @@ class BookingView extends GetView<BookingController> {
                       const Text(
                         'My Booking',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),

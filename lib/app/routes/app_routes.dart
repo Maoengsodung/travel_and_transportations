@@ -8,6 +8,12 @@ abstract class Routes {
   static const BOOKING = _Paths.BOOKING;
   static const HISTORY = _Paths.HISTORY;
   static const ACCOUNT = _Paths.ACCOUNT;
+  static const DISCOUNT = _Paths.DISCOUNT;
+  static const SEARCH = _Paths.SEARCH;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const SEARCH_CATEGORY = _Paths.SEARCH_CATEGORY;
+  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
 }
 
 abstract class _Paths {
@@ -17,4 +23,10 @@ abstract class _Paths {
   static const BOOKING = '/booking';
   static const HISTORY = '/history';
   static const ACCOUNT = '/account';
+  static const DISCOUNT = '/discount';
+  static const SEARCH = '/search';
+  static const NOTIFICATION = '/notification';
+  static const EDIT_PROFILE = '/edit-profile';
+  static const SEARCH_CATEGORY = '/search-category';
+  static const CHANGE_PASSWORD = '/change-password';
 }
