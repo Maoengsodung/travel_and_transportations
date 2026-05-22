@@ -34,7 +34,7 @@ class MainView extends GetView<MainController> {
             children: [
               navItem("assets/icons/home.png", "Home", 0),
               navItem("assets/icons/booking.png", "Booking", 1),
-              navItem("assets/icons/save.png", "Save", 2),
+              navItem("assets/icons/bookmark.png", "Save", 2),
               navItem("assets/icons/user.png", "Account", 3),
             ],
           ),

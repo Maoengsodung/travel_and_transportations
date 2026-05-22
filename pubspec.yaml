@@ -37,6 +37,11 @@ dependencies:
   get: ^4.7.3
   carousel_slider: ^5.1.2
   flutter_rating_stars: ^1.1.0
+  pinput: ^6.0.2
+  flutter_slidable: ^4.0.3
+  flutter_rating_bar: ^4.0.1
+  intl: ^0.20.2
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -98,14 +103,34 @@ flutter:
     - assets/icons/save.png
     - assets/icons/circum_route.png
     - assets/icons/camera.png
+    - assets/icons/delete.png
+    - assets/icons/imageDelete.png
+    - assets/icons/histoty_empty.png
+    - assets/icons/remove.png
+    - assets/icons/phone.png
+    - assets/icons/pass.png
+    - assets/icons/driver.png
+    - assets/icons/bed.png
+    - assets/icons/bova_sea.png
+    - assets/icons/cambo.png
+    - assets/icons/super_card.png
+    - assets/icons/service.png
 
     ## Discount
     - assets/discounts/dis1.png
     - assets/discounts/dis2.png
     - assets/discounts/dis3.png
+    - assets/icons/get_start_image.png
+    - assets/icons/login.png
+    - assets/icons/forgotpassword.png
 
     ## Logo
     - assets/logo/logo1.png
+    - assets/logo/acleda.png
+    - assets/logo/aba.png
+    - assets/logo/canadiya.jpg
+    - assets/logo/ftb.png
+    - assets/logo/wing.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

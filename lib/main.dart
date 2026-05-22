@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
+import 'app/services/app_translatations.dart';
 
 void main() {
   runApp(
     GetMaterialApp(
+      // Languages
+      translations: AppTranslations(),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
+
+      // end
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

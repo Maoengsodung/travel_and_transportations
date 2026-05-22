@@ -17,6 +17,9 @@ const lineStyleColor = Color(0xffBDBDBD);
 const gradientLeft = Color(0xffA2A9FF);
 const gradientRight = Color(0xff6A5FF5);
 const greyBorder = Color(0xffC5CCFF);
+const otpColor = Color(0xffF5F3FF);
+const backgorundIcon = Color(0xffFFDDDD);
+const btnCancel = Color(0xffDFE4FF);
 
 // Category
 List<Map<String, String>> category = [
@@ -35,61 +38,6 @@ List<String> discount = [
   'assets/discounts/dis1.png',
   'assets/discounts/dis2.png',
   'assets/discounts/dis3.png',
-];
-
-// Booking
-List<Map<String, dynamic>> booking = [
-  {
-    'name': 'Vireak Buntham',
-    'logo': 'assets/logo/logo1.png',
-    'type': 'Bus',
-    'seat': '24 Seats',
-    'start': '04:00 AM',
-    'arrived': '07:00 AM',
-    'duration': '3h',
-    'station': 'BBK, Phnom Penh',
-    'direction': 'Siem Reap',
-    'type_bus': 'Hotel Bus (Sleeper)',
-    'price': 15.99,
-    'date_travel': '30 - April - 2026',
-    'date_return': '02 - May - 2026',
-    'rating': 5.0,
-    'review': 200,
-  },
-  {
-    'name': 'Vireak Buntham',
-    'logo': 'assets/logo/logo1.png',
-    'type': 'Bus',
-    'seat': '24 Seats',
-    'start': '04:00 AM',
-    'arrived': '07:00 AM',
-    'duration': '3h',
-    'station': 'BBK, Phnom Penh',
-    'direction': 'Siem Reap',
-    'type_bus': 'Hotel Bus (Sleeper)',
-    'price': 12.99,
-    'date_travel': '30 - April - 2026',
-    'date_return': '02 - May - 2026',
-    'rating': 5.0,
-    'review': 500,
-  },
-  {
-    'name': 'Vireak Buntham',
-    'logo': 'assets/logo/logo1.png',
-    'type': 'Bus',
-    'seat': '24 Seats',
-    'start': '04:00 AM',
-    'arrived': '07:00 AM',
-    'duration': '3h',
-    'station': 'Battambong',
-    'direction': 'Siem Reap',
-    'type_bus': 'Hotel Bus (Sleeper)',
-    'price': 12.99,
-    'date_travel': '30 - April - 2026',
-    'date_return': '02 - May - 2026',
-    'rating': 5.0,
-    'review': 500,
-  },
 ];
 
 // Search Data
