@@ -37,7 +37,7 @@ class GuineLineView extends GetView<GetStartController> {
               crossAxisAlignment: .start,
               children: [
                 const Text(
-                  'Let’s start travel with me',
+                  'Discover Amazing Destinations',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -46,7 +46,7 @@ class GuineLineView extends GetView<GetStartController> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Explore transportations for travel to get new experiences.',
+                  'Choose comfortable transportations and book your trip easily for a smooth travel experience.',
                   style: TextStyle(fontSize: 16, color: greyColor),
                 ),
                 const SizedBox(height: 110),

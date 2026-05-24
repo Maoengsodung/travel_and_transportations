@@ -4,11 +4,12 @@ import 'package:travel_transportation/app/constant/constant.dart';
 import 'package:travel_transportation/app/data/data.dart';
 
 import '../../../../routes/app_pages.dart';
+import '../../../favorite/controllers/favorite_controller.dart';
 import '../controllers/search_controller.dart';
 
 class SearchView extends GetView<SearchController> {
   SearchView({super.key});
-
+  final favoriteController = Get.put(FavoriteController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class SearchView extends GetView<SearchController> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Get.toNamed(Routes.SELECT_SEAT);
+                          Get.toNamed(Routes.SELECT_SEAT, arguments: book);
                         },
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 10),
@@ -233,15 +234,21 @@ class SearchView extends GetView<SearchController> {
                       Positioned(
                         top: 20,
                         right: 15,
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Image.asset(
-                            'assets/icons/bookmark.png',
-                            width: 20,
-                            height: 20,
-                            color: greyColor,
-                          ),
-                        ),
+                        child: Obx(() {
+                          final isFav = favoriteController.isFavorite(book);
+
+                          return GestureDetector(
+                            onTap: () {
+                              favoriteController.toggleFavorite(book);
+                            },
+                            child: Image.asset(
+                              'assets/icons/bookmark.png',
+                              width: 20,
+                              height: 20,
+                              color: isFav ? gradientBottom2Color : greyColor,
+                            ),
+                          );
+                        }),
                       ),
                     ],
                   );

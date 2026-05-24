@@ -42,6 +42,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   intl: ^0.20.2
   shimmer: ^3.0.0
+  percent_indicator: ^4.2.5
+  google_maps_flutter: ^2.17.0
 
 dev_dependencies:
   flutter_test:
@@ -112,9 +114,15 @@ flutter:
     - assets/icons/driver.png
     - assets/icons/bed.png
     - assets/icons/bova_sea.png
+    - assets/icons/royal.png
     - assets/icons/cambo.png
     - assets/icons/super_card.png
     - assets/icons/service.png
+    - assets/icons/bottle.png
+    - assets/icons/charger.png
+    - assets/icons/air condi.png
+    - assets/icons/blanket.png
+    - assets/icons/bed_sheet.png
 
     ## Discount
     - assets/discounts/dis1.png
@@ -131,6 +139,18 @@ flutter:
     - assets/logo/canadiya.jpg
     - assets/logo/ftb.png
     - assets/logo/wing.png
+    - assets/images/image1.jpg
+    - assets/images/image2.jpg
+    - assets/images/image3.jpg
+    - assets/images/image4.jpg
+    - assets/images/user1.png
+    - assets/images/user2.png
+    - assets/images/user3.png
+    - assets/images/user4.png
+    - assets/images/user5.png
+    - assets/images/user6.png
+    - assets/logo/logo_app.png
+    - assets/images/empty_card.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

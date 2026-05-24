@@ -34,6 +34,7 @@ abstract class Routes {
   static const ADD_PAYMENT_METHOD = _Paths.ADD_PAYMENT_METHOD;
   static const HELP = _Paths.HELP;
   static const ABOUT_APP = _Paths.ABOUT_APP;
+  static const MAP = _Paths.MAP;
 }
 
 abstract class _Paths {
@@ -69,4 +70,5 @@ abstract class _Paths {
   static const ADD_PAYMENT_METHOD = '/add-payment-method';
   static const HELP = '/help';
   static const ABOUT_APP = '/about-app';
+  static const MAP = '/map';
 }

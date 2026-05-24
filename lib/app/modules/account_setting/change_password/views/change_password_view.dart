@@ -41,8 +41,8 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
                           Get.back();
                         },
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 40,
+                          height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: borderColor, width: 1),

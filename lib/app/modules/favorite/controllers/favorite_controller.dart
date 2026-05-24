@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
 
 class FavoriteController extends GetxController {
-  //TODO: Implement FavoriteController
+  final favorites = <Map<String, dynamic>>[].obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  bool isFavorite(Map<String, dynamic> item) {
+    return favorites.any((e) => e['id'] == item['id']);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void toggleFavorite(Map<String, dynamic> item) {
+    if (isFavorite(item)) {
+      favorites.removeWhere((e) => e['id'] == item['id']);
+    } else {
+      favorites.add(item);
+    }
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

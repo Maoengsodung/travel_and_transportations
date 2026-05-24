@@ -546,7 +546,9 @@ class _bottomSheet extends StatelessWidget {
                   // Button
                   ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) ;
+                      if (_formKey.currentState!.validate()) {
+                        Get.back();
+                      }
                     },
                     child: Center(child: Text('Add')),
                     style: ElevatedButton.styleFrom(

@@ -37,8 +37,8 @@ class NewPasswordController extends GetxController {
       passwordError.value = 'Must contain uppercase, lowercase and number';
       return false;
     }
-    isLoading(false);
     passwordError.value = '';
+    isLoading(false);
     return true;
   }
 }

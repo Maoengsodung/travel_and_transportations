@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/constant.dart';
+import '../../../routes/app_pages.dart';
+import '../../account_setting/booking/controllers/booking_controller.dart';
 import '../controllers/payment_controller.dart';
 
 class PaymentView extends GetView<PaymentController> {
@@ -81,174 +83,92 @@ class PaymentView extends GetView<PaymentController> {
                           ),
                         ),
                         const SizedBox(height: 15),
+                        SizedBox(
+                          height: 420,
+                          child: ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: controller.paymentMethod.length,
+                            itemBuilder: (context, index) {
+                              final data = controller.paymentMethod[index];
 
-                        // AC
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1.5, color: greyBorder),
-                            borderRadius: BorderRadius.circular(15),
-                            color: borderColor.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              leading: Image.asset(
-                                'assets/logo/acleda.png',
-                                width: 45,
-                                height: 45,
-                              ),
-                              title: Text(
-                                'ACLEDA',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              trailing: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: btnCancel,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 15,
-                                    vertical: 5,
-                                  ),
-                                  child: Text(
-                                    'Default',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: gradientRight,
+                              return Obx(() {
+                                final isSelected =
+                                    controller.selectedIndex.value == index;
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.5,
+                                        color: isSelected
+                                            ? greyBorder
+                                            : lineColor,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                      color: borderColor.withOpacity(0.4),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
+                                      child: ListTile(
+                                        onTap: () {
+                                          controller.changePayment(index);
+                                        },
+                                        contentPadding: EdgeInsets.zero,
+                                        minLeadingWidth: 0,
+                                        horizontalTitleGap: 15,
+                                        leading: ClipRRect(
+                                          borderRadius:
+                                              BorderRadiusGeometry.circular(10),
+                                          child: Image.asset(
+                                            data['bank']!,
+                                            width: 45,
+                                            height: 45,
+                                          ),
+                                        ),
+                                        title: Text(
+                                          data['name']!,
+                                          style: const TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                        subtitle: Text(
+                                          data['code']!,
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: greyColor,
+                                          ),
+                                        ),
+                                        trailing: isSelected
+                                            ? Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(8),
+                                                  color: btnCancel,
+                                                ),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 15,
+                                                      vertical: 5,
+                                                    ),
+                                                child: Text(
+                                                  'Default',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: gradientRight,
+                                                  ),
+                                                ),
+                                              )
+                                            : null,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-
-                        // ABA
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: borderColor),
-                            borderRadius: BorderRadius.circular(15),
-                            color: borderColor.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
-                                  'assets/logo/aba.png',
-                                  width: 45,
-                                  height: 45,
-                                ),
-                              ),
-                              title: Text(
-                                'ABA Bank',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-
-                        // Canadiya
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: borderColor),
-                            borderRadius: BorderRadius.circular(15),
-                            color: borderColor.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
-                                  'assets/logo/canadiya.jpg',
-                                  width: 45,
-                                  height: 45,
-                                ),
-                              ),
-                              title: Text(
-                                'Canadia Bank',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-
-                        // FTB
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: borderColor),
-                            borderRadius: BorderRadius.circular(15),
-                            color: borderColor.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
-                                  'assets/logo/ftb.png',
-                                  width: 45,
-                                  height: 45,
-                                ),
-                              ),
-                              title: Text(
-                                'FTB Bank',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-
-                        // Wing
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(width: 1, color: borderColor),
-                            borderRadius: BorderRadius.circular(15),
-                            color: borderColor.withOpacity(0.4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: ListTile(
-                              leading: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
-                                  'assets/logo/wing.png',
-                                  width: 45,
-                                  height: 45,
-                                ),
-                              ),
-                              title: Text(
-                                'Wing Bank',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
+                                );
+                              });
+                            },
                           ),
                         ),
                       ],
@@ -293,8 +213,8 @@ class PaymentView extends GetView<PaymentController> {
                                     color: Colors.grey,
                                   ),
                                 ),
-                                const Text(
-                                  '#V0001',
+                                Text(
+                                  controller.bookingNo,
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.black,
@@ -316,8 +236,8 @@ class PaymentView extends GetView<PaymentController> {
                                     color: Colors.grey,
                                   ),
                                 ),
-                                const Text(
-                                  '2x',
+                                Text(
+                                  '${controller.ticket}x',
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.black,
@@ -339,8 +259,8 @@ class PaymentView extends GetView<PaymentController> {
                                     color: Colors.grey,
                                   ),
                                 ),
-                                const Text(
-                                  'A01, A02',
+                                Text(
+                                  controller.seats.join(', '),
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.black,
@@ -385,8 +305,8 @@ class PaymentView extends GetView<PaymentController> {
                                     color: Colors.grey,
                                   ),
                                 ),
-                                const Text(
-                                  '\$15.00',
+                                Text(
+                                  '\$${controller.unitPrice.toStringAsFixed(2)}',
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.black,
@@ -403,7 +323,7 @@ class PaymentView extends GetView<PaymentController> {
                         padding: const EdgeInsets.all(20),
                         child: Column(
                           children: [
-                            // Booking No
+                            // Total
                             Row(
                               mainAxisAlignment: .spaceBetween,
                               children: [
@@ -414,8 +334,8 @@ class PaymentView extends GetView<PaymentController> {
                                     color: Colors.black,
                                   ),
                                 ),
-                                const Text(
-                                  '\$15.00',
+                                Text(
+                                  '\$${controller.totalAmount.toStringAsFixed(2)}',
                                   style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.black,
@@ -427,7 +347,18 @@ class PaymentView extends GetView<PaymentController> {
                             const SizedBox(height: 25),
                             // Button
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                final bookingController =
+                                    Get.find<BookingController>();
+
+                                bookingController.addBooking(
+                                  controller.makeBookingData(),
+                                );
+
+                                Get.offAllNamed(Routes.MAIN);
+
+                                Get.snackbar('Success', 'Booking successfully');
+                              },
                               child: Center(child: Text('Pay Now')),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: gradientRight,

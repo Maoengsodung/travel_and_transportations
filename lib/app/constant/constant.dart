@@ -49,3 +49,11 @@ List<String> searchData = [
   'Mondulkiri',
   'Kompong Suom',
 ];
+
+final ratings = [
+  {"star": 5, "percent": 0.66},
+  {"star": 4, "percent": 0.14},
+  {"star": 3, "percent": 0.11},
+  {"star": 2, "percent": 0.00},
+  {"star": 1, "percent": 0.14},
+];

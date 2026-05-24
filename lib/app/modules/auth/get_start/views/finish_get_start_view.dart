@@ -37,7 +37,7 @@ class FinishGetStartView extends GetView<GetStartController> {
               crossAxisAlignment: .start,
               children: [
                 const Text(
-                  'Let’s start travel with me',
+                  'Enjoy Your Journey',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -46,7 +46,7 @@ class FinishGetStartView extends GetView<GetStartController> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Explore transportations for travel to get new experiences.',
+                  'Travel with confidence, discover new places, and create unforgettable memories along the way.',
                   style: TextStyle(fontSize: 16, color: greyColor),
                 ),
                 const SizedBox(height: 110),

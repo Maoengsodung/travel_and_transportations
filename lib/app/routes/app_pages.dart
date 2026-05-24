@@ -42,6 +42,8 @@ import '../modules/home_screens/home/bindings/homes_binding.dart';
 import '../modules/home_screens/home/views/homes_view.dart';
 import '../modules/home_screens/loading/bindings/loading_binding.dart';
 import '../modules/home_screens/loading/views/loading_view.dart';
+import '../modules/home_screens/map/bindings/map_binding.dart';
+import '../modules/home_screens/map/views/map_view.dart';
 import '../modules/home_screens/search/bindings/search_binding.dart';
 import '../modules/home_screens/search/search_category/bindings/search_category_binding.dart';
 import '../modules/home_screens/search/search_category/views/search_category_view.dart';
@@ -70,7 +72,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BOOKING,
-      page: () => const BookingView(),
+      page: () => BookingView(),
       binding: BookingBinding(),
     ),
     GetPage(
@@ -131,7 +133,7 @@ class AppPages {
     GetPage(name: _Paths.DATE, page: () => DateView(), binding: DateBinding()),
     GetPage(
       name: _Paths.FAVORITE,
-      page: () => const FavoriteView(),
+      page: () => FavoriteView(),
       binding: FavoriteBinding(),
     ),
     GetPage(
@@ -189,11 +191,15 @@ class AppPages {
       page: () => const PaymentView(),
       binding: PaymentBinding(),
     ),
-
     GetPage(
       name: _Paths.ABOUT_APP,
       page: () => const AboutAppView(),
       binding: AboutAppBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAP,
+      page: () => const MapView(),
+      binding: MapBinding(),
     ),
   ];
 }

@@ -50,7 +50,7 @@ class SignUpView extends GetView<SignUpController> {
                   const SizedBox(height: 35),
 
                   // Button sign in
-                  _buttonSignUp(formKey: _formKey),
+                  _buttonSignUp(formKey: _formKey, controller: controller),
                 ],
               ),
             ),
@@ -139,8 +139,12 @@ class _rememberMe extends StatelessWidget {
 }
 
 class _buttonSignUp extends StatelessWidget {
-  const _buttonSignUp({super.key, required GlobalKey<FormState> formKey})
-    : _formKey = formKey;
+  const _buttonSignUp({
+    super.key,
+    required GlobalKey<FormState> formKey,
+    required this.controller,
+  }) : _formKey = formKey;
+  final SignUpController controller;
 
   final GlobalKey<FormState> _formKey;
 
@@ -155,7 +159,10 @@ class _buttonSignUp extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: () {
-          if (_formKey.currentState!.validate()) ;
+          if (_formKey.currentState!.validate()) {
+            controller.validatePassword();
+            Get.toNamed(Routes.SIGN_IN);
+          }
         },
         child: Text(
           'Sign Up',
@@ -251,6 +258,7 @@ class _formSignIn extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             TextFormField(
+              keyboardType: TextInputType.number,
               style: const TextStyle(color: Colors.black, fontSize: 14),
               decoration: InputDecoration(
                 hintText: '(+855) 12 345 678',

@@ -22,7 +22,7 @@ class NotificationView extends GetView<NotificationController> {
                       Get.back();
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade300),
                         borderRadius: BorderRadius.circular(12),
@@ -167,7 +167,7 @@ class NotificationView extends GetView<NotificationController> {
               ),
             ),
 
-            // Time + unread dot
+            // Time
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -188,7 +188,7 @@ class NotificationView extends GetView<NotificationController> {
         ),
 
         const SizedBox(height: 15),
-        Divider(color: greyColor),
+        Divider(color: lineColor),
         const SizedBox(height: 15),
       ],
     );

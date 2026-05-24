@@ -87,6 +87,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 Form(
                   key: _formKey,
                   child: TextFormField(
+                    keyboardType: TextInputType.number,
                     style: const TextStyle(color: Colors.black, fontSize: 14),
                     decoration: InputDecoration(
                       hintText: '(+855) 12 345 678',
