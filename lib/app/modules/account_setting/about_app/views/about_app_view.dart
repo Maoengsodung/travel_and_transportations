@@ -61,9 +61,8 @@ class AboutAppView extends GetView<AboutAppController> {
           children: [
             Center(
               child: CircleAvatar(
-                backgroundColor: gradientRight,
-                child: Text('Logo', style: TextStyle(color: Colors.white)),
-                radius: 50,
+                backgroundImage: AssetImage('assets/logo/logo_app.png'),
+                radius: 60,
               ),
             ),
             const SizedBox(height: 30),

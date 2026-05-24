@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/constant.dart';
-import '../../../routes/app_pages.dart';
 import '../controllers/favorite_controller.dart';
 
 class FavoriteView extends GetView<FavoriteController> {
@@ -79,9 +78,7 @@ class FavoriteView extends GetView<FavoriteController> {
                   return Stack(
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          Get.toNamed(Routes.SELECT_SEAT, arguments: book);
-                        },
+                        onTap: () {},
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 10),
                           decoration: BoxDecoration(

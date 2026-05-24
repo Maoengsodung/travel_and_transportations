@@ -561,7 +561,12 @@ class HistoryView extends GetView<HistoryController> {
 
                               // Btn Booking again
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Get.toNamed(
+                                    Routes.SELECT_SEAT,
+                                    arguments: book,
+                                  );
+                                },
                                 child: Container(
                                   height: 35,
                                   decoration: BoxDecoration(
